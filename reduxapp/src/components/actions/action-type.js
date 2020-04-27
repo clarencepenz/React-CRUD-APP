@@ -1,1 +1,1 @@
-export const FETCH_FEED = 'FETCH FEED';
+export const FETCH_FEED = 'FETCH_FEED';
