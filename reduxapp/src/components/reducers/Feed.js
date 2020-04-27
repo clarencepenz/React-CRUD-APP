@@ -9,7 +9,10 @@ const initialState = {
 export const feedReducer =(state = initialState, action)=>{
     switch(action.type){
         case FETCH_FEED:
-            return state
+            return {
+                ...state,
+                feeds: action.payload
+            }
             default:
                 return state
     }
