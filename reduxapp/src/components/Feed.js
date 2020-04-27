@@ -6,15 +6,15 @@ import { connect } from 'react-redux'
 
 class Feed extends Component {
 
-    componentWillMount(){
+    componentDidMount(){
         this.props.fetchFeed()
     }
 
     render() {
         const feed = this.props.feeds.map(feed =>(
             <div key={feed.id}>
-                {feed.title}
-                {feed.body}
+               <h3>{feed.title}</h3> 
+                <p>{feed.body}</p>
                 
             </div>
         ))

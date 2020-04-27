@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux'
-import thunk from 'react-thunk'
+import thunk from 'redux-thunk'
 import { allReducer} from '../reducers'
 
 const initialState = {}
@@ -7,7 +7,7 @@ const initialState = {}
 const middleware = [thunk]
 
 export const store = createStore(
-    allReducer, 
+    allReducer,  
     initialState, 
     compose (
         applyMiddleware(...middleware), 
