@@ -11,16 +11,23 @@ class Feed extends Component {
     }
 
     render() {
+        const feed = this.props.feeds.map(feed =>(
+            <div key={feed.id}>
+                {feed.title}
+                {feed.body}
+                
+            </div>
+        ))
         return (
             <div>
-                
+                {feed}
             </div>
         )
     }
 }
 
-const mapStateToProps =(state)=> ({
-        feed: state.feed.feed
+const mapStateToProps = state=> ({
+        feeds: state.feeds.feeds
 })
 
 
