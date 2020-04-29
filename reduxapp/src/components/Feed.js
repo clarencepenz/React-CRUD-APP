@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { fetchFeed } from './actions/FeedAction'
+import { fetchFeed, deleteFeed } from './actions/FeedAction'
 import { connect } from 'react-redux'
 
 
@@ -15,6 +15,7 @@ class Feed extends Component {
             <div key={feed.id}>
                <h3>{feed.title}</h3> 
                 <p>{feed.body}</p>
+                <button onClick={()=> this.props.deleteFeed(feed.pid)}>x</button>
                 
             </div>
         ))
@@ -31,4 +32,4 @@ const mapStateToProps = state=> ({
 })
 
 
-export default connect(mapStateToProps, { fetchFeed})(Feed)
+export default connect(mapStateToProps, { fetchFeed, deleteFeed })(Feed)
