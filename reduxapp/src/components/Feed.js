@@ -10,6 +10,12 @@ class Feed extends Component {
         this.props.fetchFeed()
     }
 
+    componentWillReceiveProps(nextProps){
+        if(nextProps.newPost){
+            this.props.posts.unshift(nextProps.newPost)
+        }
+    }
+
     render() {
         const feed = this.props.feeds.map(feed =>(
             <div key={feed.id}>
@@ -28,7 +34,8 @@ class Feed extends Component {
 }
 
 const mapStateToProps = state=> ({
-        feeds: state.feeds.feeds
+        feeds: state.feeds.feeds,
+        newPost: state.feeds.feed
 })
 
 
