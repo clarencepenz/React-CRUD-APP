@@ -1,4 +1,4 @@
-import { FETCH_FEED, DELETE_FEED } from './action-type'
+import { FETCH_FEED, DELETE_FEED, NEW_FEED} from './action-type'
 
 export const fetchFeed =()=> dispatch =>{
     fetch('http://localhost:3000/api/v1/articles')
@@ -16,6 +16,21 @@ export const deleteFeed =(pid)=> dispatch =>{
     .then(res => res.json())
     .then(feed => dispatch({
         type: DELETE_FEED,
+        payload: feed
+    }))
+}
+
+export const createFeed = data => dispatch =>{
+    fetch('http://localhost:3000/api/v1/articles', {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(res.json())
+    .then(feed => dispatch({
+        type: NEW_FEED,
         payload: feed
     }))
 }

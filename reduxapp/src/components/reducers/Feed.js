@@ -1,4 +1,4 @@
-import { FETCH_FEED, DELETE_FEED } from '../actions/action-type'
+import { FETCH_FEED, DELETE_FEED, NEW_FEED } from '../actions/action-type'
 
 const initialState = {
     feeds: [],
@@ -18,6 +18,11 @@ export const feedReducer =(state = initialState, action)=>{
             return{
                 ...state,
                 feeds: state.feeds.filter(feed => feed.pid !== pid)
+            }
+        case NEW_FEED:
+            return {
+                ...state,
+                feed: action.payload
             }
             default:
                 return state
