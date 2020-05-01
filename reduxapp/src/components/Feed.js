@@ -12,7 +12,7 @@ class Feed extends Component {
 
     componentWillReceiveProps(nextProps){
         if(nextProps.newPost){
-            this.props.posts.unshift(nextProps.newPost)
+            this.props.feeds.unshift(nextProps.newPost)
         }
     }
 

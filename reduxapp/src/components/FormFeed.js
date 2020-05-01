@@ -16,7 +16,7 @@ class FormFeed extends Component {
         e.preventDefault()
         const feed = {
             title: this.state.title,
-            body: this.state.bodytitle
+            body: this.state.body
         }
         this.props.createFeed(feed)
     }
