@@ -8,6 +8,10 @@ class FormFeed extends Component {
         body: ''
     }
 
+    onChange =(e)=>{
+        this.setState({[e.target.name]: e.target.value})
+    }
+
     onSubmit =(e)=>{
         e.preventDefault()
         const feed = {

@@ -28,7 +28,7 @@ export const createFeed = data => dispatch =>{
         },
         body: JSON.stringify(data)
     })
-    .then(res.json())
+    .then(res => res.json())
     .then(feed => dispatch({
         type: NEW_FEED,
         payload: feed
