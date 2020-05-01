@@ -19,7 +19,20 @@ class FormFeed extends Component {
     render() {
         return (
             <form onSubmit={this.onSubmit}>
-
+                <input
+                    type="text"
+                    name="title"
+                    onChange={this.onChange}
+                    value={this.state.title}
+                    placeholder="title"
+                />
+                <textarea
+                    name="body"
+                    onChange={this.onChange}
+                    value={this.state.body}
+                    placeholder="body"
+                />
+                    <button type="submit">Post</button>
             </form>
         )
     }
